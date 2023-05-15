@@ -13,13 +13,14 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
+- task: NodeTaskRunnerInstaller@0
+  inputs:
+    nodeVersion: '6'
+
 - task: CmdLine@2
   displayName: 'install'
   inputs:
     script:  |
-     'npm config set registry https://registry.npmjs.org'
-     'rm package.json && rm nodemodules'
-     'npm install'
      'npm install'
 
 #- task: CmdLine@2
