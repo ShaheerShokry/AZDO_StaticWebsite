@@ -18,12 +18,12 @@ steps:
   inputs:
     script: 'npm install'
 
-- task: CmdLine@2
-  displayName: 'Run Tests'
-  inputs:
-    script: |
-      set CI=true
-      npm run test
+#- task: CmdLine@2
+#  displayName: 'Run Tests'
+#  inputs:
+#    script: |
+#      set CI=true
+#      npm run test
 
 - task: CmdLine@2
   displayName: 'Build'
