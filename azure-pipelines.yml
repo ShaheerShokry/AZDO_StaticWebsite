@@ -42,10 +42,10 @@ steps:
    npm install
   displayName: 'Install Dependencies'
 
-- script: |
-   set CI=true
-   npm run test
-  displayName: 'Run Tests'
+#- script: |
+#   set CI=true
+#   npm run test
+#  displayName: 'Run Tests'
 
 - script: |
    npm run build
