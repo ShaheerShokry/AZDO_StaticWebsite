@@ -48,6 +48,7 @@ steps:
 #  displayName: 'Run Tests'
 
 - script: |
+   export NODE_OPTIONS=--openssl-legacy-provider
    npm run build
   displayName: 'Build the Project'
     
