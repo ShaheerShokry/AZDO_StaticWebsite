@@ -17,12 +17,12 @@ steps:
   inputs:
     nodeVersion: '6'
 
-- task: CmdLine@2
-  displayName: 'install'
-  inputs:
-    script:  |
-     'sudo apt-get install npm'
-     'npm install'
+#- task: CmdLine@2
+#  displayName: 'install'
+#  inputs:
+#    script:  |
+#     'sudo apt-get install npm'
+#     'npm install'
 
 #- task: CmdLine@2
 #  displayName: 'Run Tests'
@@ -31,12 +31,25 @@ steps:
 #      set CI=true
 #      npm run test
 
-- task: CmdLine@2
-  displayName: 'Build'
-  inputs:
-    script: |
-      'export NODE_OPTIONS=--openssl-legacy-provider'
-      'npm run build'
+#- task: CmdLine@2
+#  displayName: 'Build'
+#  inputs:
+#    script: |
+#      'export NODE_OPTIONS=--openssl-legacy-provider'
+#      'npm run build'
+
+- script: |
+   npm install
+  displayName: 'Install Dependencies'
+
+- script: |
+   set CI=true
+   npm run test
+  displayName: 'Run Tests'
+
+- script: |
+   npm run build
+  displayName: 'Build the Project'
     
 - task: CopyFiles@2
   displayName: 'Copy Files'
