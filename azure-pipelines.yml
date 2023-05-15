@@ -28,7 +28,9 @@ steps:
 - task: CmdLine@2
   displayName: 'Build'
   inputs:
-    script: 'npm run build'
+    script: |
+      'export NODE_OPTIONS=--openssl-legacy-provider'
+      'npm run build'
     
 - task: CopyFiles@2
   displayName: 'Copy Files'
