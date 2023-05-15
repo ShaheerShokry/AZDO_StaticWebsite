@@ -17,9 +17,9 @@ steps:
   displayName: 'install'
   inputs:
     script:  |
-     'yarn config set registry https://registry.npmjs.org'
-     'yarn cache clean'
-     'yarn install'
+     'npm config set registry https://registry.npmjs.org'
+     'rm package.json && rm nodemodules'
+     'npm install'
      'npm install'
 
 #- task: CmdLine@2
