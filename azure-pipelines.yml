@@ -16,7 +16,11 @@ steps:
 - task: CmdLine@2
   displayName: 'install'
   inputs:
-    script: 'npm install'
+    script:  |
+     'yarn config set registry https://registry.npmjs.org'
+     'yarn cache clean'
+     'yarn install'
+     'npm install'
 
 #- task: CmdLine@2
 #  displayName: 'Run Tests'
